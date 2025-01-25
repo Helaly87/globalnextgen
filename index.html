@@ -3,60 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Nextgen Company</title>
+    <title>Global Nextgen</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
-        }
-        .container {
-            text-align: center;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        h1 {
-            margin-top: 20px;
-            font-size: 24px;
+            background-color: #f4f4f4;
             color: #333;
         }
-        .contact-info {
-            margin-top: 15px;
-            font-size: 16px;
-            color: #555;
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #003399;
+            padding: 10px 20px;
         }
-        .contact-info a {
-            color: #007BFF;
+        .navbar a {
+            color: #fff;
+            margin-left: 15px;
             text-decoration: none;
+            font-weight: bold;
         }
-        .contact-info a:hover {
+        .navbar a:hover {
             text-decoration: underline;
         }
-        .under-construction {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #FF5733;
+        .hero {
+            background-color: #003399;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .hero p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+        }
+        .services {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .services h2 {
+            color: #003399;
+            margin-bottom: 20px;
+        }
+        .services .service {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .contact {
+            background-color: #ffcc00;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .contact h2 {
+            margin: 0;
+            color: #003399;
+        }
+        .contact p {
+            margin: 10px 0 0;
+            font-size: 1.1em;
+        }
+        .contact a {
+            color: #003399;
+            text-decoration: none;
             font-weight: bold;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        [lang="ar"] {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Arial', sans-serif;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="logo.png" alt="Global Nextgen Logo">
-        <h1>Welcome to Global Nextgen Company</h1>
-        <div class="contact-info">
-            <p>Contact: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
+    <div class="navbar">
+        <a href="#" onclick="switchLanguage('en')">English</a>
+        <a href="#" onclick="switchLanguage('ar')">العربية</a>
+    </div>
+
+    <div id="content" lang="en">
+        <div class="hero">
+            <h1>Welcome to Global Nextgen</h1>
+            <p>Your trusted partner in import, export, and trade mediation</p>
         </div>
-        <div class="under-construction">
-            <p>Website Under Construction</p>
+
+        <div class="services">
+            <h2>Our Services</h2>
+            <p class="service">- Import and Export of Food Products</p>
+            <p class="service">- Chemical Fertilizers Supply</p>
+            <p class="service">- Trade Mediation</p>
+        </div>
+
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
         </div>
     </div>
+
+    <div id="content-ar" lang="ar" style="display: none;">
+        <div class="hero">
+            <h1>مرحبًا بكم في شركة جلوبال نكستجن</h1>
+            <p>شريكك الموثوق في الاستيراد والتصدير والوساطة التجارية</p>
+        </div>
+
+        <div class="services">
+            <h2>خدماتنا</h2>
+            <p class="service">- استيراد وتصدير المنتجات الغذائية</p>
+            <p class="service">- توريد الأسمدة الكيماوية</p>
+            <p class="service">- الوساطة التجارية</p>
+        </div>
+
+        <div class="contact">
+            <h2>تواصل معنا</h2>
+            <p>البريد الإلكتروني: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            document.getElementById('content').style.display = lang === 'en' ? 'block' : 'none';
+            document.getElementById('content-ar').style.display = lang === 'ar' ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>
