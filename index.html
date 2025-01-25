@@ -10,6 +10,7 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
+            overflow-x: hidden;
         }
         .navbar {
             display: flex;
@@ -29,17 +30,25 @@
             text-decoration: underline;
         }
         .hero {
-            background: url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+            position: relative;
+            height: 100vh;
+            background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
             color: #fff;
             text-align: center;
-            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .hero h1 {
             font-size: 3em;
             margin: 0;
+            animation: fadeInDown 2s ease;
         }
         .hero p {
             font-size: 1.5em;
+            margin-top: 10px;
+            animation: fadeInUp 2s ease;
         }
         .section {
             padding: 40px 20px;
@@ -73,60 +82,59 @@
         .contact a:hover {
             text-decoration: underline;
         }
-        .content {
-            display: none;
-            text-align: center;
+        [lang="ar"] {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Arial', sans-serif;
         }
-        .content.active {
-            display: block;
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
     <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.content').forEach(content => {
-                content.classList.remove('active');
+        function switchLanguage(lang) {
+            document.querySelectorAll('[lang]').forEach(el => {
+                el.style.display = el.lang === lang ? 'block' : 'none';
             });
-            document.getElementById(sectionId).classList.add('active');
         }
     </script>
 </head>
 <body>
     <div class="navbar">
         <div>
-            <a href="#" onclick="showSection('home')">Home</a>
-            <a href="#" onclick="showSection('fertilizers')">Fertilizers & Pesticides</a>
-            <a href="#" onclick="showSection('food')">Food Products</a>
-            <a href="#" onclick="showSection('contact')">Contact</a>
+            <a href="#" onclick="switchLanguage('en')">English</a>
+            <a href="#" onclick="switchLanguage('ar')">العربية</a>
         </div>
     </div>
 
-    <div id="home" class="content active">
+    <div id="home-en" lang="en">
         <div class="hero">
             <h1>Welcome to Global Nextgen</h1>
             <p>Your trusted partner in import, export, and trade mediation</p>
         </div>
     </div>
 
-    <div id="fertilizers" class="content">
-        <div class="section">
-            <h2>Fertilizers & Pesticides</h2>
-            <p>We offer high-quality fertilizers and pesticides to ensure sustainable agricultural solutions.</p>
-        </div>
-    </div>
-
-    <div id="food" class="content">
-        <div class="section">
-            <h2>Food Products</h2>
-            <p>Explore our wide range of imported and exported food products, ensuring quality and freshness.</p>
-        </div>
-    </div>
-
-    <div id="contact" class="content">
-        <div class="contact">
-            <h2>Contact Us</h2>
-            <p>Email: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
-            <p>Phone: +15173120716</p>
-            <p>Address: Business Center, Sharjah Publishing City Free Zone, Sharjah, United Arab Emirates</p>
+    <div id="home-ar" lang="ar" style="display: none;">
+        <div class="hero">
+            <h1>مرحبًا بكم في جلوبال نكستجن</h1>
+            <p>شريكك الموثوق في الاستيراد والتصدير والوساطة التجارية</p>
         </div>
     </div>
 </body>
