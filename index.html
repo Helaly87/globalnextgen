@@ -10,7 +10,6 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
-            overflow-x: hidden;
         }
         .navbar {
             display: flex;
@@ -22,7 +21,7 @@
         }
         .navbar a {
             color: #fff;
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
         }
@@ -31,35 +30,59 @@
         }
         .hero {
             position: relative;
-            height: 100vh;
+            height: 80vh;
             background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
-            color: #fff;
-            text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            color: #fff;
+            text-align: center;
         }
         .hero h1 {
             font-size: 3em;
-            margin: 0;
-            animation: fadeInDown 2s ease;
+            margin-bottom: 10px;
         }
         .hero p {
             font-size: 1.5em;
-            margin-top: 10px;
-            animation: fadeInUp 2s ease;
+            margin-top: 0;
         }
         .section {
             padding: 40px 20px;
             text-align: center;
         }
         .section h2 {
+            font-size: 2em;
             color: #003399;
             margin-bottom: 20px;
         }
-        .section p {
-            font-size: 1.1em;
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .service-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .service-card h3 {
+            margin-top: 15px;
+            font-size: 1.5em;
+            color: #003399;
         }
         .contact {
             background-color: #ffcc00;
@@ -67,12 +90,12 @@
             text-align: center;
         }
         .contact h2 {
-            margin: 0;
+            margin: 0 0 10px 0;
             color: #003399;
         }
         .contact p {
-            margin: 10px 0 0;
             font-size: 1.1em;
+            margin: 5px 0;
         }
         .contact a {
             color: #003399;
@@ -82,88 +105,48 @@
         .contact a:hover {
             text-decoration: underline;
         }
-        [lang="ar"] {
-            direction: rtl;
-            text-align: right;
-            font-family: 'Arial', sans-serif;
-        }
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
-    <script>
-        function switchLanguage(lang) {
-            document.querySelectorAll('[lang]').forEach(el => {
-                el.style.display = el.lang === lang ? 'block' : 'none';
-            });
-        }
-    </script>
 </head>
 <body>
     <div class="navbar">
         <div>
-            <a href="#" onclick="switchLanguage('en')">English</a>
-            <a href="#" onclick="switchLanguage('ar')">العربية</a>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </div>
     </div>
 
-    <div id="home-en" lang="en">
-        <div class="hero">
-            <h1>Welcome to Global Nextgen</h1>
-            <p>Your trusted partner in import, export, and trade mediation</p>
-        </div>
+    <div id="home" class="hero">
+        <h1>Welcome to Global Nextgen</h1>
+        <p>Your trusted partner in import, export, and trade mediation</p>
+    </div>
 
-        <div class="section">
-            <h2>Our Services</h2>
-            <p>- Import and Export of Food Products</p>
-            <p>- Chemical Fertilizers Supply</p>
-            <p>- Trade Mediation</p>
-        </div>
-
-        <div class="contact">
-            <h2>Contact Us</h2>
-            <p>Email: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
-            <p>Phone: +15173120716</p>
-            <p>Address: Business Center, Sharjah Publishing City Free Zone, Sharjah, United Arab Emirates</p>
+    <div id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <img src="https://via.placeholder.com/300x200" alt="Fertilizers">
+                <h3>Chemical Fertilizers</h3>
+                <p>High-quality fertilizers to boost agricultural growth.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://via.placeholder.com/300x200" alt="Food Products">
+                <h3>Food Products</h3>
+                <p>Fresh and quality food products for global trade.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://via.placeholder.com/300x200" alt="Trade Mediation">
+                <h3>Trade Mediation</h3>
+                <p>Efficient mediation services to connect businesses.</p>
+            </div>
         </div>
     </div>
 
-    <div id="home-ar" lang="ar" style="display: none;">
-        <div class="hero">
-            <h1>مرحبًا بكم في جلوبال نكستجن</h1>
-            <p>شريكك الموثوق في الاستيراد والتصدير والوساطة التجارية</p>
-        </div>
-
-        <div class="section">
-            <h2>خدماتنا</h2>
-            <p>- استيراد وتصدير المنتجات الغذائية</p>
-            <p>- توريد الأسمدة الكيماوية</p>
-            <p>- الوساطة التجارية</p>
-        </div>
-
-        <div class="contact">
-            <h2>تواصل معنا</h2>
-            <p>البريد الإلكتروني: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
-            <p>الهاتف: +15173120716</p>
-            <p>العنوان: مركز الأعمال، مدينة الشارقة للنشر، المنطقة الحرة، الشارقة، الإمارات العربية المتحدة</p>
-        </div>
+    <div id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
+        <p>Phone: +15173120716</p>
+        <p>Address: Business Center, Sharjah Publishing City Free Zone, Sharjah, UAE</p>
     </div>
 </body>
 </html>
