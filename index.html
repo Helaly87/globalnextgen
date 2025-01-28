@@ -5,32 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Nextgen</title>
     <style>
+        /* General styles */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
         }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar styles */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: #003399;
-            padding: 10px 20px;
-            color: #fff;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .navbar.scrolled {
+            background-color: #002266;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
         }
         .navbar a {
             color: #fff;
             margin: 0 15px;
-            text-decoration: none;
             font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
         }
         .navbar a:hover {
-            text-decoration: underline;
+            color: #ffcc00;
         }
+
+        /* Hero Section */
         .hero {
             position: relative;
-            height: 80vh;
+            height: 100vh;
             background: url('https://i.pinimg.com/736x/b7/33/c4/b733c4edae153243ea5534f1b916b7ba.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
@@ -40,75 +67,136 @@
             text-align: center;
         }
         .hero h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
         }
         .hero p {
             font-size: 1.5em;
-            margin-top: 0;
+            margin: 0 0 20px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
         }
+        .hero .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ffcc00;
+            color: #003399;
+            font-weight: bold;
+            border-radius: 25px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+        .hero .cta-button:hover {
+            background-color: #e6b800;
+        }
+
+        /* Section styles */
         .section {
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
         .section h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             color: #003399;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
+
+        /* Services section */
         .services {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             flex-wrap: wrap;
         }
         .service-card {
             background-color: #fff;
             border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             width: 300px;
             padding: 20px;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
         .service-card img {
             max-width: 100%;
             border-radius: 10px;
         }
         .service-card h3 {
-            margin-top: 15px;
+            margin: 15px 0;
             font-size: 1.5em;
             color: #003399;
         }
+        .service-card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Contact Section */
         .contact {
-            background-color: #ffcc00;
-            padding: 30px 20px;
+            background-color: #003399;
+            color: #fff;
+            padding: 50px 20px;
             text-align: center;
         }
         .contact h2 {
-            margin: 0 0 10px 0;
-            color: #003399;
+            margin: 0 0 20px;
+            font-size: 2.5em;
+            color: #ffcc00;
         }
         .contact p {
-            font-size: 1.1em;
-            margin: 5px 0;
+            font-size: 1.2em;
+            margin: 10px 0;
         }
         .contact a {
-            color: #003399;
-            text-decoration: none;
+            color: #ffcc00;
+            text-decoration: underline;
             font-weight: bold;
         }
-        .contact a:hover {
-            text-decoration: underline;
+
+        /* Footer */
+        footer {
+            background-color: #002266;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        footer a {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .service-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
+    <!-- Navbar -->
+    <div class="navbar" id="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Global Nextgen Logo">
+            <a href="#home">Global Nextgen</a>
+        </div>
         <div>
             <a href="#home">Home</a>
             <a href="#services">Services</a>
@@ -116,11 +204,14 @@
         </div>
     </div>
 
+    <!-- Hero Section -->
     <div id="home" class="hero">
         <h1>Welcome to Global Nextgen</h1>
         <p>Your trusted partner in import, export, and trade mediation</p>
+        <a href="#contact" class="cta-button">Contact Us</a>
     </div>
 
+    <!-- Services Section -->
     <div id="services" class="section">
         <h2>Our Services</h2>
         <div class="services">
@@ -134,19 +225,14 @@
                 <h3>Food Products</h3>
                 <p>Fresh and quality food products for global trade.</p>
             </div>
-            <div class="service-card">
-                <img src="https://i.pinimg.com/736x/97/45/30/974530737d77f4618c07be64a6f7fc21.jpg" alt="Trade Mediation">
-                <h3>Trade Mediation</h3>
-                <p>Efficient mediation services to connect businesses.</p>
-            </div>
         </div>
     </div>
 
+    <!-- Contact Section -->
     <div id="contact" class="contact">
         <h2>Contact Us</h2>
         <p>Email: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
-        <p>Phone: +15173120716</p>
-        <p>Address: Business Center, Sharjah Publishing City Free Zone, Sharjah, UAE</p>
     </div>
+
 </body>
 </html>
