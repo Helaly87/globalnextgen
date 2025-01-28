@@ -11,7 +11,6 @@
             font-family: 'Poppins', Arial, sans-serif;
             background-color: #f9f9f9;
             color: #333;
-            line-height: 1.6;
             scroll-behavior: smooth;
         }
         a {
@@ -19,7 +18,7 @@
             color: inherit;
         }
 
-        /* Navbar styles */
+        /* Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -48,15 +47,10 @@
             margin: 0 15px;
             font-weight: bold;
             text-transform: uppercase;
-            transition: color 0.3s ease;
-        }
-        .navbar a:hover {
-            color: #ffcc00;
         }
 
         /* Hero Section */
         .hero {
-            position: relative;
             height: 100vh;
             background: url('https://i.pinimg.com/736x/b7/33/c4/b733c4edae153243ea5534f1b916b7ba.jpg') center/cover no-repeat;
             display: flex;
@@ -68,29 +62,21 @@
         }
         .hero h1 {
             font-size: 4em;
-            margin-bottom: 20px;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
         }
         .hero p {
             font-size: 1.5em;
-            margin: 0 0 20px;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
         }
         .hero .cta-button {
-            display: inline-block;
             padding: 15px 30px;
             background-color: #ffcc00;
             color: #003399;
             font-weight: bold;
             border-radius: 25px;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
-        }
-        .hero .cta-button:hover {
-            background-color: #e6b800;
+            margin-top: 20px;
         }
 
-        /* Section styles */
+        /* Section */
         .section {
             padding: 60px 20px;
             text-align: center;
@@ -98,10 +84,9 @@
         .section h2 {
             font-size: 2.5em;
             color: #003399;
-            margin-bottom: 30px;
         }
 
-        /* Services section */
+        /* Services */
         .services {
             display: flex;
             justify-content: center;
@@ -109,34 +94,20 @@
             flex-wrap: wrap;
         }
         .service-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             width: 300px;
-            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .service-card img {
-            max-width: 100%;
+            width: 100%;
             border-radius: 10px;
         }
-        .service-card h3 {
-            margin: 15px 0;
-            font-size: 1.5em;
-            color: #003399;
-        }
-        .service-card p {
-            font-size: 1em;
-            color: #555;
-        }
 
-        /* Contact Section */
+        /* Contact */
         .contact {
             background-color: #003399;
             color: #fff;
@@ -144,18 +115,16 @@
             text-align: center;
         }
         .contact h2 {
-            margin: 0 0 20px;
-            font-size: 2.5em;
             color: #ffcc00;
         }
         .contact p {
-            font-size: 1.2em;
             margin: 10px 0;
+            font-size: 1.2em;
         }
         .contact a {
             color: #ffcc00;
-            text-decoration: underline;
             font-weight: bold;
+            text-decoration: underline;
         }
 
         /* Footer */
@@ -163,30 +132,7 @@
             background-color: #002266;
             color: #fff;
             text-align: center;
-            padding: 15px;
-            font-size: 0.9em;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-        footer a {
-            color: #ffcc00;
-            font-weight: bold;
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3em;
-            }
-            .hero p {
-                font-size: 1.2em;
-            }
-            .service-card {
-                width: 100%;
-                margin-bottom: 20px;
-            }
+            padding: 20px;
         }
     </style>
 </head>
@@ -194,8 +140,8 @@
     <!-- Navbar -->
     <div class="navbar" id="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Global Nextgen Logo">
-            <a href="#home">Global Nextgen</a>
+            <img src="logo.png" alt="Logo">
+            <span>Global Nextgen</span>
         </div>
         <div>
             <a href="#home">Home</a>
@@ -207,7 +153,7 @@
     <!-- Hero Section -->
     <div id="home" class="hero">
         <h1>Welcome to Global Nextgen</h1>
-        <p>Your trusted partner in import, export, and trade mediation</p>
+        <p>Your trusted partner in Import, Export, and Trade Mediation</p>
         <a href="#contact" class="cta-button">Contact Us</a>
     </div>
 
@@ -225,6 +171,11 @@
                 <h3>Food Products</h3>
                 <p>Fresh and quality food products for global trade.</p>
             </div>
+            <div class="service-card">
+                <img src="https://i.pinimg.com/736x/97/45/30/974530737d77f4618c07be64a6f7fc21.jpg" alt="Trade Mediation">
+                <h3>Trade Mediation</h3>
+                <p>Efficient services connecting businesses globally.</p>
+            </div>
         </div>
     </div>
 
@@ -232,7 +183,14 @@
     <div id="contact" class="contact">
         <h2>Contact Us</h2>
         <p>Email: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
+        <p>Phone: +15173120716</p>
+        <p>WhatsApp: <a href="https://wa.me/15173120716" target="_blank">Chat with us on WhatsApp</a></p>
+        <p>Address: Business Center, Sharjah Publishing City Free Zone, Sharjah, UAE</p>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Global Nextgen. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
