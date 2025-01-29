@@ -39,6 +39,10 @@
             margin: 0 15px;
             font-weight: bold;
             text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #ffcc00;
         }
 
         /* Hero Section */
@@ -47,11 +51,11 @@
             background: url('https://i.pinimg.com/736x/b7/33/c4/b733c4edae153243ea5534f1b916b7ba.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* النصوص ستبدأ من أعلى */
+            justify-content: flex-start;
             align-items: center;
             color: #fff;
             text-align: center;
-            padding-top: 100px; /* إضافة مسافة لخفض النص */
+            padding-top: 80px; /* إضافة مسافة لخفض النصوص */
         }
         .hero h1 {
             font-size: 3em;
@@ -80,6 +84,51 @@
             padding: 60px 20px;
             text-align: center;
         }
+        .section h2 {
+            font-size: 2.5em;
+            color: #003399;
+        }
+
+        /* Services */
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .service-card {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .service-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Contact */
+        .contact {
+            background-color: #003399;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .contact h2 {
+            color: #ffcc00;
+        }
+        .contact p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .contact a {
+            color: #ffcc00;
+            font-weight: bold;
+            text-decoration: underline;
+        }
 
         /* Footer */
         footer {
@@ -96,6 +145,9 @@
             }
             .hero p {
                 font-size: 1em;
+            }
+            .service-card {
+                width: 100%;
             }
         }
     </style>
@@ -118,6 +170,37 @@
         <h1>Welcome to Global Nextgen</h1>
         <p>Your trusted partner in Import, Export, and Trade Mediation</p>
         <a href="#contact" class="cta-button">Contact Us</a>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <img src="https://i.pinimg.com/1200x/d1/c6/a6/d1c6a62d2c9b090b14069992cc0b846f.jpg" alt="Fertilizers">
+                <h3>Chemical Fertilizers</h3>
+                <p>High-quality fertilizers to boost agricultural growth.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://i.pinimg.com/736x/ee/b2/af/eeb2af2abaa2c461b5708ee8576eb1d1.jpg" alt="Food Products">
+                <h3>Food Products</h3>
+                <p>Fresh and quality food products for global trade.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://i.pinimg.com/736x/97/45/30/974530737d77f4618c07be64a6f7fc21.jpg" alt="Trade Mediation">
+                <h3>Trade Mediation</h3>
+                <p>Efficient services connecting businesses globally.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
+        <p>Phone: +15173120716</p>
+        <p>WhatsApp: <a href="https://wa.me/15173120716" target="_blank">Chat with us on WhatsApp</a></p>
+        <p>Address: Business Center, Sharjah Publishing City Free Zone, Sharjah, UAE</p>
     </div>
 
     <!-- Footer -->
