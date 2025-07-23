@@ -3,184 +3,421 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Nextgen FZC</title>
+    <title>Global Nextgen FZC | Professional Trade Solutions</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
+        :root {
+            --primary-dark: #1a2933; /* Dark Slate Blue */
+            --primary-accent: #d4af37; /* Gold */
+            --light-bg: #f8f9fa;
+            --text-color: #333;
+            --white-color: #fff;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #fefefe;
-            color: #333;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
         }
+
         a {
             text-decoration: none;
             color: inherit;
+            transition: color 0.3s ease;
         }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #7c1c1c;
             padding: 15px 30px;
             position: fixed;
             width: 100%;
             top: 0;
+            left: 0;
             z-index: 1000;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+            box-sizing: border-box;
         }
+        
+        .navbar.scrolled {
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
         .navbar .logo img {
-            height: 60px;
+            height: 50px;
+            /* Using a placeholder logo */
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 150 50"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Poppins" font-size="20" font-weight="bold" fill="white">GNG FZC</text></svg>');
         }
-        .navbar nav {
+        
+        .nav-links {
             display: flex;
-            gap: 30px;
-            margin-right: 30px;
+            gap: 40px;
         }
-        .navbar a {
-            color: white;
+
+        .nav-links a {
+            color: var(--white-color);
             font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
         }
-        .navbar a:hover {
-            color: #fbbf24;
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-accent);
+            transition: width 0.3s ease;
         }
+
+        .nav-links a:hover {
+            color: var(--primary-accent);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--white-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
         .hero {
             height: 100vh;
-            background: url('https://cdn.pixabay.com/photo/2023/02/06/19/39/technology-7771421_1280.gif') center/cover no-repeat;
+            background: linear-gradient(rgba(26, 41, 51, 0.7), rgba(26, 41, 51, 0.7)), url('https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
+            color: var(--white-color);
             padding: 0 20px;
         }
+
         .hero h1 {
-            font-size: 3em;
+            font-size: clamp(2.5em, 5vw, 4em);
             margin-bottom: 10px;
-            text-shadow: 2px 2px 10px #000;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }
+
         .hero p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 5px #000;
+            font-size: clamp(1.1em, 2vw, 1.4em);
+            margin-bottom: 30px;
+            font-weight: 400;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
         }
+
         .cta-button {
-            background-color: #fbbf24;
-            color: #7c1c1c;
-            padding: 12px 25px;
-            border-radius: 30px;
+            background-color: var(--primary-accent);
+            color: var(--primary-dark);
+            padding: 15px 35px;
+            border-radius: 50px;
             font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* General Section Styling */
         .section {
-            padding: 80px 20px;
+            padding: 100px 0;
+        }
+        
+        .section-header {
             text-align: center;
+            margin-bottom: 60px;
         }
-        .section h2 {
-            font-size: 2.5em;
-            color: #7c1c1c;
-            margin-bottom: 40px;
+
+        .section-header h2 {
+            font-size: clamp(2.2em, 4vw, 2.8em);
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
         }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: var(--primary-accent);
+            bottom: -10px;
+            left: 20%;
+        }
+
+        /* Services Section */
         .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
+
         .service-card {
-            width: 280px;
-            background-color: #fff;
+            background-color: var(--white-color);
             border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
             overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
         .service-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
+
         .service-card h3 {
-            margin: 15px 0 5px;
-            color: #7c1c1c;
+            margin: 20px 0 10px;
+            color: var(--primary-dark);
+            font-size: 1.4em;
         }
+
         .service-card p {
-            padding: 0 15px 20px;
+            padding: 0 20px 25px;
+            font-size: 0.95em;
         }
-        .contact {
-            background-color: #7c1c1c;
-            color: #fff;
-            padding: 60px 20px;
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--primary-dark);
+            color: var(--white-color);
         }
-        .contact a {
-            color: #fbbf24;
+        #contact .section-header h2 {
+            color: var(--white-color);
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .contact-info-item {
+            font-size: 1.1em;
+        }
+        
+        .contact-info-item i {
+            color: var(--primary-accent);
+            margin-right: 10px;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+
+        .contact-info-item a {
+            color: var(--white-color);
+        }
+        .contact-info-item a:hover {
+            color: var(--primary-accent);
+        }
+        
+        .company-profile-link {
+            display: inline-block;
+            margin-top: 30px;
+            background-color: var(--primary-accent);
+            color: var(--primary-dark);
+            padding: 12px 25px;
+            border-radius: 30px;
             font-weight: bold;
         }
-        footer {
-            background-color: #5a1313;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
+        .company-profile-link:hover {
+            background-color: var(--white-color);
         }
+
+        /* Footer */
+        footer {
+            background-color: #111c22;
+            color: #ccc;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9em;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .service-card {
-                width: 90%;
-            }
-            .navbar nav {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--primary-dark);
                 flex-direction: column;
-                gap: 10px;
-                margin-right: 0;
+                justify-content: center;
+                align-items: center;
+                gap: 25px;
+                transition: right 0.5s ease-in-out;
+            }
+            .nav-links.show-menu {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 1.5rem;
+            }
+            .nav-toggle {
+                display: block;
+                z-index: 1001; /* Above nav links */
+            }
+            .nav-toggle.fa-times {
+                color: var(--primary-accent);
             }
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
+    <header class="navbar" id="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Logo">
+            <a href="#home"><img src="logo.png" alt="Global Nextgen FZC Logo"></a>
         </div>
-        <nav>
+        <nav class="nav-links" id="nav-links">
             <a href="#home">Home</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
         </nav>
-    </div>
-
-    <section id="home" class="hero">
-        <h1>Global Nextgen FZC</h1>
-        <p>Connecting Markets, Empowering Trade</p>
-        <a class="cta-button" href="#contact">Contact Us</a>
-    </section>
-
-    <section id="services" class="section">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119" alt="Fertilizers">
-                <h3>Chemical Fertilizers</h3>
-                <p>High-quality fertilizers to boost agricultural productivity.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1556912167-f556f1f39df1" alt="Food Products">
-                <h3>Food Products</h3>
-                <p>Delicious, premium food offerings from trusted suppliers.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1581092787760-c3d97748b8df" alt="Trade Mediation">
-                <h3>Trade Mediation</h3>
-                <p>Seamless import-export solutions tailored to your needs.</p>
-            </div>
+        <div class="nav-toggle" id="nav-toggle">
+            <i class="fas fa-bars"></i>
         </div>
-    </section>
+    </header>
 
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
-        <p>Phone: +971 565107675</p>
-        <p>WhatsApp: <a href="https://wa.me/971565107675" target="_blank">Chat with us</a></p>
-        <p>Address: Business Centre, Sharjah Publishing City Free Zone, Sharjah, UAE</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/company/global-nextgen" target="_blank">Follow us on LinkedIn</a></p>
-        <p><a href="/Company%20Profile.pdf" download target="_blank">Download Company Profile</a></p>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <h1>Global Nextgen FZC</h1>
+            <p>Connecting Markets, Empowering Trade</p>
+            <a class="cta-button" href="#contact">Contact Us</a>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                </div>
+                <div class="services">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1612250101285-8f4a86b3a391?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1800" alt="Chemical Fertilizers">
+                        <h3>Chemical Fertilizers</h3>
+                        <p>High-quality fertilizers to boost agricultural productivity.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1800" alt="Food Products">
+                        <h3>Food Products</h3>
+                        <p>Delicious, premium food offerings from trusted suppliers.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1800" alt="Trade Mediation">
+                        <h3>Trade Mediation</h3>
+                        <p>Seamless import-export solutions tailored to your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                 <div class="section-header">
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info-item">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
+                    </div>
+                     <div class="contact-info-item">
+                        <p><i class="fas fa-phone"></i> <a href="tel:+971565107675">+971 565107675</a></p>
+                    </div>
+                    <div class="contact-info-item">
+                        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/971565107675" target="_blank">Chat with us on WhatsApp</a></p>
+                    </div>
+                    <div class="contact-info-item">
+                         <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/company/global-nextgen" target="_blank">Follow us on LinkedIn</a></p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                     <p><i class="fas fa-map-marker-alt"></i> Business Centre, Sharjah Publishing City Free Zone, Sharjah, UAE</p>
+                     <a href="/Company%20Profile.pdf" download target="_blank" class="company-profile-link">Download Company Profile</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Global Nextgen FZC. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const navbar = document.getElementById('navbar');
+
+        // Toggle mobile menu
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show-menu');
+            // Change icon
+            const icon = navToggle.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when a link is clicked
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(navLinks.classList.contains('show-menu')){
+                    navLinks.classList.remove('show-menu');
+                    navToggle.querySelector('i').classList.remove('fa-times');
+                    navToggle.querySelector('i').classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
