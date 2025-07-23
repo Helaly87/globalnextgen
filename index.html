@@ -3,205 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Nextgen</title>
+    <title>Global Nextgen FZC</title>
     <style>
         body {
             margin: 0;
-            font-family: 'Poppins', Arial, sans-serif;
-            background-color: #fff9f5;
-            color: #2c2c2c;
-            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff9f6;
+            color: #2e2e2e;
         }
         a {
             text-decoration: none;
             color: inherit;
         }
-
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #7f1d1d;
-            padding: 15px 20px;
+            background-color: #7c1c1c;
+            padding: 15px 30px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
         }
         .navbar .logo img {
-            height: 80px;
+            height: 60px;
+        }
+        .navbar nav {
+            display: flex;
+            gap: 20px;
         }
         .navbar a {
-            color: #fff;
-            margin: 0 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
+            color: white;
+            font-weight: 600;
         }
         .navbar a:hover {
             color: #fbbf24;
         }
-
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1610072118957-61fa7f6539d2') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600369672800-17fbd7b0cc10') center/cover no-repeat;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #fff;
             text-align: center;
+            color: white;
             padding: 0 20px;
         }
         .hero h1 {
-            font-size: 3.5em;
+            font-size: 3em;
             margin-bottom: 10px;
-            animation: fadeInDown 1s ease-in-out;
         }
         .hero p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-in-out;
+            font-size: 1.2em;
+            margin-bottom: 20px;
         }
-        .hero .cta-button {
-            padding: 14px 30px;
+        .cta-button {
             background-color: #fbbf24;
-            color: #7f1d1d;
-            font-weight: bold;
+            color: #7c1c1c;
+            padding: 12px 25px;
             border-radius: 30px;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
+            font-weight: bold;
         }
-        .hero .cta-button:hover {
-            background-color: #eab308;
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .section {
             padding: 80px 20px;
             text-align: center;
         }
         .section h2 {
-            font-size: 2.8em;
-            color: #7f1d1d;
-            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #7c1c1c;
+            margin-bottom: 40px;
         }
-
         .services {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 30px;
         }
         .service-card {
-            width: 300px;
-            border-radius: 10px;
+            width: 280px;
             background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
         .service-card img {
             width: 100%;
-            border-radius: 10px;
+            height: 200px;
+            object-fit: cover;
         }
-
+        .service-card h3 {
+            margin: 15px 0 5px;
+            color: #7c1c1c;
+        }
+        .service-card p {
+            padding: 0 15px 20px;
+        }
         .contact {
-            background-color: #7f1d1d;
+            background-color: #7c1c1c;
             color: #fff;
             padding: 60px 20px;
-            text-align: center;
-        }
-        .contact h2 {
-            color: #fbbf24;
-        }
-        .contact p {
-            margin: 10px 0;
-            font-size: 1.2em;
         }
         .contact a {
             color: #fbbf24;
             font-weight: bold;
-            text-decoration: underline;
         }
-
         footer {
-            background-color: #4b1212;
+            background-color: #5a1313;
             color: #fff;
             text-align: center;
             padding: 20px;
         }
-
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2em; }
-            .hero p { font-size: 1em; }
-            .service-card { width: 90%; }
+            .service-card {
+                width: 90%;
+            }
+            .navbar nav {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="navbar" id="navbar">
+    <div class="navbar">
         <div class="logo">
             <img src="logo.png" alt="Logo">
         </div>
-        <div>
+        <nav>
             <a href="#home">Home</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
-        </div>
+        </nav>
     </div>
 
-    <div id="home" class="hero">
-        <div>
-            <h1>Global Nextgen FZC</h1>
-            <p>Connecting Markets, Empowering Trade</p>
-            <a href="#contact" class="cta-button">Contact Us</a>
-        </div>
-    </div>
+    <section id="home" class="hero">
+        <h1>Global Nextgen FZC</h1>
+        <p>Connecting Markets, Empowering Trade</p>
+        <a class="cta-button" href="#contact">Contact Us</a>
+    </section>
 
-    <div id="services" class="section">
+    <section id="services" class="section">
         <h2>Our Services</h2>
         <div class="services">
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1582735680700-966ce61f90f0" alt="Fertilizers">
+                <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119" alt="Fertilizers">
                 <h3>Chemical Fertilizers</h3>
                 <p>High-quality fertilizers to boost agricultural productivity.</p>
             </div>
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1609250292344-7613b3c0c7a6" alt="Food Products">
+                <img src="https://images.unsplash.com/photo-1556912167-f556f1f39df1" alt="Food Products">
                 <h3>Food Products</h3>
                 <p>Delicious, premium food offerings from trusted suppliers.</p>
             </div>
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe" alt="Trade Mediation">
+                <img src="https://images.unsplash.com/photo-1581092787760-c3d97748b8df" alt="Trade Mediation">
                 <h3>Trade Mediation</h3>
                 <p>Seamless import-export solutions tailored to your needs.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id="contact" class="contact">
+    <section id="contact" class="contact">
         <h2>Contact Us</h2>
         <p>Email: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
         <p>Phone: +971 565107675</p>
-        <p>WhatsApp: <a href="https://wa.me/971565107675" target="_blank">Chat with us on WhatsApp</a></p>
+        <p>WhatsApp: <a href="https://wa.me/971565107675" target="_blank">Chat with us</a></p>
         <p>Address: Business Centre, Sharjah Publishing City Free Zone, Sharjah, UAE</p>
         <p>LinkedIn: <a href="https://www.linkedin.com/company/global-nextgen" target="_blank">Follow us on LinkedIn</a></p>
-        <p><a href="Company%20Profile.pdf" target="_blank">Download Our Company Profile</a></p>
-    </div>
+        <p><a href="/Company%20Profile.pdf" target="_blank">Download Company Profile</a></p>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Global Nextgen. All Rights Reserved.</p>
+        <p>&copy; 2025 Global Nextgen FZC. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
