@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Nextgen</title>
     <style>
-        /* General styles */
         body {
             margin: 0;
             font-family: 'Poppins', Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: #fff9f5;
+            color: #2c2c2c;
             scroll-behavior: smooth;
         }
         a {
@@ -18,21 +17,19 @@
             color: inherit;
         }
 
-        /* Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #003399;
+            background-color: #7f1d1d;
             padding: 15px 20px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: background-color 0.3s ease;
         }
         .navbar .logo img {
-            height: 120px; /* حجم الشعار */
+            height: 80px;
         }
         .navbar a {
             color: #fff;
@@ -42,118 +39,117 @@
             transition: color 0.3s ease;
         }
         .navbar a:hover {
-            color: #ffcc00;
+            color: #fbbf24;
         }
 
-        /* Hero Section */
         .hero {
-            height: 60vh; /* تقليل الارتفاع */
-            background: url('https://i.pinimg.com/736x/b7/33/c4/b733c4edae153243ea5534f1b916b7ba.jpg') center/cover no-repeat;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1610072118957-61fa7f6539d2') center/cover no-repeat;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* جعل النصوص تبدأ من الأعلى */
+            justify-content: center;
             align-items: center;
             color: #fff;
             text-align: center;
-            padding-top: 120px; /* إنزال النصوص بمقدار 2 سم */
+            padding: 0 20px;
         }
         .hero h1 {
-            font-size: 3em;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            font-size: 3.5em;
             margin-bottom: 10px;
+            animation: fadeInDown 1s ease-in-out;
         }
         .hero p {
-            font-size: 1.2em;
-            margin: 0 0 20px;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-in-out;
         }
         .hero .cta-button {
-            padding: 12px 25px;
-            background-color: #ffcc00;
-            color: #003399;
+            padding: 14px 30px;
+            background-color: #fbbf24;
+            color: #7f1d1d;
             font-weight: bold;
-            border-radius: 25px;
+            border-radius: 30px;
             text-transform: uppercase;
             transition: background-color 0.3s ease;
         }
         .hero .cta-button:hover {
-            background-color: #e6b800;
+            background-color: #eab308;
         }
 
-        /* Section */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
         .section h2 {
-            font-size: 2.5em;
-            color: #003399;
+            font-size: 2.8em;
+            color: #7f1d1d;
+            margin-bottom: 30px;
         }
 
-        /* Services */
         .services {
             display: flex;
             justify-content: center;
-            gap: 30px;
             flex-wrap: wrap;
+            gap: 30px;
         }
         .service-card {
             width: 300px;
-            border: 1px solid #ddd;
             border-radius: 10px;
             background-color: #fff;
-            text-align: center;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
         }
         .service-card img {
             width: 100%;
             border-radius: 10px;
         }
 
-        /* Contact */
         .contact {
-            background-color: #003399;
+            background-color: #7f1d1d;
             color: #fff;
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
         .contact h2 {
-            color: #ffcc00;
+            color: #fbbf24;
         }
         .contact p {
             margin: 10px 0;
             font-size: 1.2em;
         }
         .contact a {
-            color: #ffcc00;
+            color: #fbbf24;
             font-weight: bold;
             text-decoration: underline;
         }
 
-        /* Footer */
         footer {
-            background-color: #002266;
+            background-color: #4b1212;
             color: #fff;
             text-align: center;
             padding: 20px;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            .hero p {
-                font-size: 1em;
-            }
-            .service-card {
-                width: 100%;
-            }
+            .hero h1 { font-size: 2.2em; }
+            .hero p { font-size: 1em; }
+            .service-card { width: 90%; }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <div class="navbar" id="navbar">
         <div class="logo">
             <img src="logo.png" alt="Logo">
@@ -165,45 +161,45 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
     <div id="home" class="hero">
-        <h1>Welcome to Global Nextgen</h1>
-        <p>Your trusted partner in Import, Export, and Trade Mediation</p>
-        <a href="#contact" class="cta-button">Contact Us</a>
+        <div>
+            <h1>Global Nextgen FZC</h1>
+            <p>Connecting Markets, Empowering Trade</p>
+            <a href="#contact" class="cta-button">Contact Us</a>
+        </div>
     </div>
 
-    <!-- Services Section -->
     <div id="services" class="section">
         <h2>Our Services</h2>
         <div class="services">
             <div class="service-card">
-                <img src="https://i.pinimg.com/1200x/d1/c6/a6/d1c6a62d2c9b090b14069992cc0b846f.jpg" alt="Fertilizers">
+                <img src="https://images.unsplash.com/photo-1582735680700-966ce61f90f0" alt="Fertilizers">
                 <h3>Chemical Fertilizers</h3>
-                <p>High-quality fertilizers to boost agricultural growth.</p>
+                <p>High-quality fertilizers to boost agricultural productivity.</p>
             </div>
             <div class="service-card">
-                <img src="https://i.pinimg.com/736x/ee/b2/af/eeb2af2abaa2c461b5708ee8576eb1d1.jpg" alt="Food Products">
+                <img src="https://images.unsplash.com/photo-1609250292344-7613b3c0c7a6" alt="Food Products">
                 <h3>Food Products</h3>
-                <p>Fresh and quality food products for global trade.</p>
+                <p>Delicious, premium food offerings from trusted suppliers.</p>
             </div>
             <div class="service-card">
-                <img src="https://i.pinimg.com/736x/97/45/30/974530737d77f4618c07be64a6f7fc21.jpg" alt="Trade Mediation">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe" alt="Trade Mediation">
                 <h3>Trade Mediation</h3>
-                <p>Efficient services connecting businesses globally.</p>
+                <p>Seamless import-export solutions tailored to your needs.</p>
             </div>
         </div>
     </div>
 
-    <!-- Contact Section -->
     <div id="contact" class="contact">
         <h2>Contact Us</h2>
         <p>Email: <a href="mailto:a.taher@globalnextgen.net">a.taher@globalnextgen.net</a></p>
-        <p>Phone: +15173120716</p>
-        <p>WhatsApp: <a href="https://wa.me/15173120716" target="_blank">Chat with us on WhatsApp</a></p>
-        <p>Address: Business Center, Sharjah Publishing City Free Zone, Sharjah, UAE</p>
+        <p>Phone: +971 565107675</p>
+        <p>WhatsApp: <a href="https://wa.me/971565107675" target="_blank">Chat with us on WhatsApp</a></p>
+        <p>Address: Business Centre, Sharjah Publishing City Free Zone, Sharjah, UAE</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/company/global-nextgen" target="_blank">Follow us on LinkedIn</a></p>
+        <p><a href="Company%20Profile.pdf" target="_blank">Download Our Company Profile</a></p>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Global Nextgen. All Rights Reserved.</p>
     </footer>
