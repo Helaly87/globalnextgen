@@ -8,8 +8,8 @@
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #fff9f6;
-            color: #2e2e2e;
+            background-color: #fefefe;
+            color: #333;
         }
         a {
             text-decoration: none;
@@ -31,7 +31,8 @@
         }
         .navbar nav {
             display: flex;
-            gap: 20px;
+            gap: 30px;
+            margin-right: 30px;
         }
         .navbar a {
             color: white;
@@ -42,7 +43,7 @@
         }
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600369672800-17fbd7b0cc10') center/cover no-repeat;
+            background: url('https://cdn.pixabay.com/photo/2023/02/06/19/39/technology-7771421_1280.gif') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -54,10 +55,12 @@
         .hero h1 {
             font-size: 3em;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 10px #000;
         }
         .hero p {
             font-size: 1.2em;
             margin-bottom: 20px;
+            text-shadow: 1px 1px 5px #000;
         }
         .cta-button {
             background-color: #fbbf24;
@@ -121,6 +124,8 @@
             }
             .navbar nav {
                 flex-direction: column;
+                gap: 10px;
+                margin-right: 0;
             }
         }
     </style>
@@ -171,7 +176,7 @@
         <p>WhatsApp: <a href="https://wa.me/971565107675" target="_blank">Chat with us</a></p>
         <p>Address: Business Centre, Sharjah Publishing City Free Zone, Sharjah, UAE</p>
         <p>LinkedIn: <a href="https://www.linkedin.com/company/global-nextgen" target="_blank">Follow us on LinkedIn</a></p>
-        <p><a href="/Company%20Profile.pdf" target="_blank">Download Company Profile</a></p>
+        <p><a href="/Company%20Profile.pdf" download target="_blank">Download Company Profile</a></p>
     </section>
 
     <footer>
