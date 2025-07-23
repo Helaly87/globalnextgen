@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Nextgen FZC | Connecting Markets, Empowering Trade</title>
+    <title>Global Nextgen FZC | نربط الأسواق، نمكّن التجارة</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +31,7 @@
             background-color: var(--light-bg);
             color: #333;
             line-height: 1.7;
+            text-align: right;
             overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
@@ -88,7 +89,9 @@
         .navbar.scrolled .nav-links a {
             color: var(--primary-dark);
         }
-        .navbar.scrolled .nav-links a:hover,
+        .navbar.scrolled .nav-links a:hover {
+            color: var(--accent-gold);
+        }
         .nav-links a:hover {
             color: var(--accent-gold);
         }
@@ -104,7 +107,7 @@
             color: var(--primary-dark);
         }
 
-        /* Hero Section */
+        /* Hero Section with Animated Background */
         .hero {
             position: relative;
             height: 100vh;
@@ -147,14 +150,13 @@
             font-weight: bold;
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid transparent;
         }
         .cta-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
         }
         
-        /* Sections General Styling */
+        /* General Section Styling */
         .section {
             padding: 100px 0;
         }
@@ -176,15 +178,11 @@
             height: 4px;
             background: var(--accent-gold);
             bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 15%;
             border-radius: 2px;
         }
 
         /* Services Section */
-        #services {
-            background-color: var(--white-color);
-        }
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -198,6 +196,7 @@
             overflow: hidden;
             text-align: center;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
+            direction: ltr;
         }
         .service-card:hover {
             transform: translateY(-12px);
@@ -223,8 +222,9 @@
 
         /* Contact Section */
         #contact {
-            background-color: #152233;
+            background-color: #152233; /* Slightly lighter dark blue */
             color: var(--text-light);
+            padding-bottom: 60px;
         }
         #contact .section-header h2 { color: var(--white-color); }
         .contact-grid {
@@ -254,11 +254,9 @@
         .download-wrapper .cta-button {
             background-color: transparent;
             border: 2px solid var(--accent-gold);
-            color: var(--accent-gold);
         }
         .download-wrapper .cta-button:hover {
             background-color: var(--accent-gold);
-            color: var(--white-color);
         }
         
         /* Footer */
@@ -286,29 +284,30 @@
             .nav-toggle { display: block; }
             .nav-links {
                 position: fixed;
-                top: 0; left: -100%;
+                top: 0; right: -100%;
                 width: 100%; height: 100vh;
                 background-color: rgba(26, 41, 61, 0.98);
                 backdrop-filter: blur(8px);
                 flex-direction: column; justify-content: center;
                 align-items: center; gap: 40px;
-                transition: left 0.5s ease-in-out;
+                transition: right 0.5s ease-in-out;
             }
-            .nav-links.active { left: 0; }
+            .nav-links.active { right: 0; }
             .nav-links a, .navbar.scrolled .nav-links a { font-size: 1.8rem; color: var(--white-color); }
         }
+
     </style>
 </head>
 <body>
     <header class="navbar" id="navbar">
         <a href="#home" class="logo">
-            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFRUVFRUVFRUVFRUVFRUVFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABgECBAUHAwj/xABPEAABAwIDBAMICAYFCgcAAAABAAIDBBEFEiEGMUETIlFhcYGRoQcyUpKxstEHFBUjM0JTYnKywdLh8CQ0U4Ki4vEWJTREU2Rzo7PC0//EABoBAQACAwEAAAAAAAAAAAAAAAACAwEEBQb/xAAyEQEAAQMBBQYEBQUAAAAAAAAAAQIDEQQhEjFBUWFxgZGh8BQiMrHB0RRS4fFCUmL/2gAMAwEAAhEDEQA/APcUREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQ_,” alt="Global Nextgen FZC Logo">
+            <img src="http://googleusercontent.com/file_content/3" alt="Global Nextgen FZC Logo">
         </a>
         <nav>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
             </ul>
         </nav>
         <div class="nav-toggle" id="nav-toggle">
@@ -320,35 +319,35 @@
         <section id="home" class="hero">
             <div id="particles-js"></div>
             <h1 class="reveal">Global Nextgen FZC</h1>
-            <p class="reveal">Connecting Markets, Empowering Trade</p>
-            <a class="cta-button reveal" href="#services">Discover Our Services</a>
+            <p class="reveal">نربط الأسواق، ونمكّن التجارة</p>
+            <a class="cta-button reveal" href="#contact">اكتشف خدماتنا</a>
         </section>
 
         <section id="services" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <h2>Our Professional Services</h2>
+                    <h2>خدماتنا الاحترافية</h2>
                 </div>
                 <div class="services-grid">
                     <div class="service-card reveal">
-                        <img src="https://images.unsplash.com/photo-1593011864138-6516163e8a4a?q=80&w=1974&auto=format&fit=crop" alt="Chemical Fertilizers">
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop" alt="أسمدة كيماوية">
                         <div class="service-card-content">
-                            <h3>Chemical Fertilizers</h3>
-                            [cite_start]<p>Delivering high-purity, effective fertilizers to enhance agricultural productivity and ensure sustainable growth. [cite: 17]</p>
+                            <h3>الأسمدة الكيماوية</h3>
+                            <p>حلول مبتكرة وعالية الجودة من الأسمدة لتعزيز الإنتاجية الزراعية وتحقيق أفضل العوائد.</p>
                         </div>
                     </div>
                     <div class="service-card reveal">
-                        <img src="https://images.unsplash.com/photo-1620912189837-55c843564363?q=80&w=1974&auto=format&fit=crop" alt="Food Products">
+                        <img src="https://images.unsplash.com/photo-1550989460-0d97b5611354?q=80&w=2070&auto=format&fit=crop" alt="منتجات غذائية">
                         <div class="service-card-content">
-                            <h3>Premium Food Products</h3>
-                            [cite_start]<p>Sourcing and distributing a wide range of high-quality food products from trusted global suppliers. [cite: 17]</p>
+                            <h3>المنتجات الغذائية</h3>
+                            <p>نوفر مجموعة واسعة من المنتجات الغذائية الفاخرة من أفضل الموردين العالميين الموثوقين.</p>
                         </div>
                     </div>
                     <div class="service-card reveal">
-                        <img src="https://images.unsplash.com/photo-1554224155-16954405a255?q=80&w=2070&auto=format&fit=crop" alt="Trade Mediation">
+                        <img src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?q=80&w=2070&auto=format&fit=crop" alt="وساطة تجارية">
                         <div class="service-card-content">
-                            <h3>Trade Mediation</h3>
-                            [cite_start]<p>Providing seamless import, export, and trade mediation solutions tailored to your business needs. [cite: 16]</p>
+                            <h3>الوساطة التجارية</h3>
+                            <p>نقدم حلول استيراد وتصدير سلسة ومصممة خصيصًا لتلبية احتياجات أعمالك التجارية العالمية.</p>
                         </div>
                     </div>
                 </div>
@@ -358,7 +357,7 @@
         <section id="contact" class="section">
             <div class="container">
                  <div class="section-header reveal">
-                    <h2>Get In Touch</h2>
+                    <h2>تواصل معنا اليوم</h2>
                 </div>
                 <div class="contact-grid">
                     <div class="contact-item reveal">
@@ -371,12 +370,12 @@
                     </div>
                     <div class="contact-item reveal">
                         <i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/971565107675" target="_blank">Chat on WhatsApp</a>
+                        <a href="https://wa.me/971565107675" target="_blank">تحدث معنا عبر واتساب</a>
                     </div>
                 </div>
                 <div class="download-wrapper reveal">
                     <a href="http://googleusercontent.com/file_content/0" download="Global-Nextgen-Profile.pdf" class="cta-button">
-                        <i class="fas fa-download"></i> Download Company Profile
+                        <i class="fas fa-download"></i> تحميل ملف الشركة
                     </a>
                 </div>
             </div>
@@ -384,24 +383,27 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Global Nextgen FZC. All Rights Reserved.</p>
+        <p>&copy; 2025 Global Nextgen FZC. جميع الحقوق محفوظة.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <script>
+        // --- Navbar and Animation Logic ---
         document.addEventListener('DOMContentLoaded', function () {
             const navToggle = document.getElementById('nav-toggle');
             const navLinks = document.getElementById('nav-links');
             const navbar = document.getElementById('navbar');
             const navIcon = navToggle.querySelector('i');
 
+            // Toggle mobile menu
             navToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
                 navIcon.classList.toggle('fa-bars');
                 navIcon.classList.toggle('fa-times');
             });
 
+            // Navbar scroll effect
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
                     navbar.classList.add('scrolled');
@@ -410,6 +412,7 @@
                 }
             });
 
+            // Intersection Observer for reveal animations
             const revealElements = document.querySelectorAll('.reveal');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -421,6 +424,7 @@
             }, { threshold: 0.1 });
             revealElements.forEach(el => observer.observe(el));
 
+            // Particles.js configuration
             particlesJS('particles-js', {
                 "particles": {
                     "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
